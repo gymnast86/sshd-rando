@@ -389,7 +389,7 @@ def generate_path_hint_locations(world: World, hint_locations: list) -> None:
                     and get_possible_gossip_stones(loc)
                 )
             )
-            # Also don't choose any locations that are known vanilla items, or small/boss keys in known regions
+            # Also don't choose any locations that are known vanilla items, or small/boss keys/key pieces in known regions
             and not (
                 loc.has_known_vanilla_item
                 or loc.is_goal_location
@@ -404,6 +404,10 @@ def generate_path_hint_locations(world: World, hint_locations: list) -> None:
                     and world.setting("boss_keys").is_any_of(
                         "own_dungeon", "own_region"
                     )
+                )
+                or (
+                    loc.current_item.name == KEY_PIECE
+                    and world.setting("open_earth_temple") == "shuffle_eldin"
                 )
             )
         ]
@@ -478,6 +482,7 @@ def generate_item_hint_locations(world: World, hint_locations: list) -> None:
         # and is not already hinted...
         # and does not have a small key when the keys are in known areas...
         # and does not have a boss key when boss keys are in known areas...
+        # and does not have a key piece when key pieces are in known areas...
         # and is not a goal location
         # and is not an "always" location when we're using always hints
         # and is not a gratitude crystal pack or single gratitude crystal
@@ -494,6 +499,10 @@ def generate_item_hint_locations(world: World, hint_locations: list) -> None:
             and not (
                 location.current_item.is_boss_key
                 and world.setting("boss_keys").is_any_of("own_dungeon", "own_region")
+            )
+            and not (
+                location.current_item.name == KEY_PIECE
+                and world.setting("open_earth_temple") == "shuffle_eldin"
             )
             and not location.is_goal_location
             and (
