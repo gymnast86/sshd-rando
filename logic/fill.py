@@ -372,7 +372,7 @@ def place_own_region_items(world: World, worlds: list[World]):
         world.item_pool[key_piece] = 0
 
         for location in world.get_all_item_locations():
-            if any(
+            if location.progression and any(
                 la
                 for la in location.loc_access_list
                 if "Eldin Volcano" in la.area.hint_regions
