@@ -72,7 +72,9 @@ def load_plandomizer_data(worlds: list["World"], filepath: Path):
                                     f"Location {location} does not have a price associated with it."
                                 )
                             if item["price"] < 0:
-                                raise PlandomizerError(f"Shop price must not be negative")
+                                raise PlandomizerError(
+                                    f"Shop price must not be negative"
+                                )
                             world.plandomizer.shop_prices[location] = item["price"]
 
             if "entrances" in world_data:
