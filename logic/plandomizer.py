@@ -1,14 +1,26 @@
+from .location import Location
+from .entrance import Entrance
 from pathlib import Path
-from .world import *
-
+from typing import TYPE_CHECKING
 import yaml
+
+if TYPE_CHECKING:
+    from .world import *
 
 
 class PlandomizerError(RuntimeError):
     pass
 
 
-def load_plandomizer_data(worlds: list[World], filepath: Path):
+class Plandomizer:
+    def __init__(self) -> None:
+        self.locations: dict[Location, Item] = {}
+        self.entrances: dict[Entrance, Entrance] = {}
+        self.shop_prices: dict[Location, int] = {}
+        self.custom_messages: dict[Location, str] = {}
+
+
+def load_plandomizer_data(worlds: list["World"], filepath: Path):
     if filepath == None:
         return
     if not filepath.is_file():
@@ -25,29 +37,41 @@ def load_plandomizer_data(worlds: list[World], filepath: Path):
             world_data = plando[world_str]
 
             if "locations" in world_data:
-                for location, item in world_data["locations"].items():
+                for location_name, item in world_data["locations"].items():
+                    location = world.get_location(location_name)
                     # If the item is a string, use it directly
                     if type(item) is str:
-                        world.plandomizer_locations[world.get_location(location)] = (
-                            world.get_item(item)
-                        )
+                        world.plandomizer.locations[location] = world.get_item(item)
                     else:
-                        # If the item isn't a string, then it should have world and item specifications
-                        for field in ["world", "item"]:
-                            if field not in item:
+                        # If any field is unrecognized, throw an error
+                        for field in item:
+                            if field not in ["item", "world", "price"]:
                                 raise PlandomizerError(
-                                    f"The item being plandomized at {location} in {world} is missing the {field} field"
+                                    f"Unknown field for location {location} in plandomizer file."
                                 )
 
-                        # Throw an error if the specified world number doesn't exist
-                        if item["world"] > len(worlds):
-                            raise PlandomizerError(
-                                f'Incorrect world number "{item["world"]}". Only {len(worlds)} world(s) are being generated.'
-                            )
+                        # Set item if the field is there
+                        if item["item"]:
+                            # Get world id for item if specified
+                            item_world = item.get("world", world.id)
 
-                        world.plandomizer_locations[world.get_location(location)] = (
-                            worlds[item["world"] - 1].get_item(item["item"])
-                        )
+                            # Throw an error if the specified world number doesn't exist
+                            if item_world >= len(worlds):
+                                raise PlandomizerError(
+                                    f'Incorrect world number "{item["world"]}". Only {len(worlds)} world(s) are being generated.'
+                                )
+
+                            world.plandomizer.locations[location] = worlds[
+                                item_world
+                            ].get_item(item["item"])
+
+                        # Set price if it's there
+                        if item["price"]:
+                            if "Price" not in location.types:
+                                raise PlandomizerError(
+                                    f"Location {location} does not have a price associated with it."
+                                )
+                            world.plandomizer.shop_prices[location] = item["price"]
 
             if "entrances" in world_data:
                 for entrance_name, target_name in world_data["entrances"].items():
@@ -58,7 +82,7 @@ def load_plandomizer_data(worlds: list[World], filepath: Path):
                         f"{target_parent} -> {target_connected}"
                     )
 
-                    world.plandomizer_entrances[entrance] = target
+                    world.plandomizer.entrances[entrance] = target
 
             if "sometimes_hint_locations" in world_data:
                 # Clear previous sometimes locations
@@ -79,3 +103,12 @@ def load_plandomizer_data(worlds: list[World], filepath: Path):
                 for location_name in world_data["always_hint_locations"]:
                     location = world.get_location(location_name)
                     location.hint_priority = "always"
+
+            if "custom_messages" in world_data:
+                for location_name, message in world_data["custom_messages"].items():
+                    location = world.get_location(location_name)
+                    if "Hint Location" not in location.types:
+                        raise PlandomizerError(
+                            f"{location} does not have a custom message associated with it."
+                        )
+                    world.plandomizer.custom_messages[location] = message
