@@ -22,10 +22,10 @@ def spoiler_format_location(
 
 
 def spoiler_format_entrance(entrance: Entrance, longest_name_length: int) -> str:
-    spaces = longest_name_length - len(f"{entrance}")
-    replacement = entrance.replaces.original_name
+    spaces = longest_name_length - len(f"{entrance.alias}")
+    replacement = entrance.replaces.alias
     parent, connected = replacement.split(" -> ")
-    return f"{entrance}: {spaces * ' '}{connected} from {parent}"
+    return f"{entrance.alias}: {spaces * ' '}{connected} from {parent}"
 
 
 def log_basic_info(log, config: Config, worlds: list[World]) -> None:
@@ -156,7 +156,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
         longest_name_length = 0
         for sphere in worlds[0].entrance_spheres:
             for entrance in sphere:
-                longest_name_length = max(longest_name_length, len(f"{entrance}"))
+                longest_name_length = max(longest_name_length, len(entrance.alias))
 
         # Print entrance playthrough
         sphere_num = 0
@@ -221,7 +221,7 @@ def generate_spoiler_log(worlds: list[World]) -> None:
         longest_name_length = 0
         for world in worlds:
             for entrance in world.get_shuffled_entrances():
-                longest_name_length = max(longest_name_length, len(f"{entrance}"))
+                longest_name_length = max(longest_name_length, len(entrance.alias))
 
         if worlds_with_shuffled_entrances := [
             w for w in worlds if len(w.get_shuffled_entrances()) > 0

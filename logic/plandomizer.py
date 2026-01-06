@@ -1,6 +1,6 @@
+from filepathconstants import ENTRANCE_SHUFFLE_DATA_PATH
 from pathlib import Path
 from .world import *
-
 import yaml
 
 
@@ -50,8 +50,16 @@ def load_plandomizer_data(worlds: list[World], filepath: Path):
                         )
 
             if "entrances" in world_data:
+                alias_dict = load_entrance_aliases()
                 for entrance_name, target_name in world_data["entrances"].items():
-                    target_connected, target_parent = target_name.split(" from ")
+                    # Get proper names if aliases were used
+                    if entrance_name in alias_dict:
+                        entrance_name = alias_dict[entrance_name]
+                    if target_name in alias_dict:
+                        target_name = alias_dict[target_name]
+                        target_parent, target_connected = target_name.split(" -> ")
+                    else:
+                        target_connected, target_parent = target_name.split(" from ")
 
                     entrance = world.get_entrance(entrance_name)
                     target = world.get_entrance(
@@ -79,3 +87,25 @@ def load_plandomizer_data(worlds: list[World], filepath: Path):
                 for location_name in world_data["always_hint_locations"]:
                     location = world.get_location(location_name)
                     location.hint_priority = "always"
+
+
+# Helper function to load entrance aliases since they aren't normally loaded until setting entrance data
+def load_entrance_aliases() -> dict[str, str]:
+    alias_dict: dict[str, str] = {}
+    with open(ENTRANCE_SHUFFLE_DATA_PATH, encoding="utf-8") as entrance_data_file:
+        entrance_shuffle_list = yaml.safe_load(entrance_data_file)
+        for entrance_data in entrance_shuffle_list:
+            original_name = entrance_data["forward"]["connection"]
+            if alias := entrance_data["forward"].get("alias", None):
+                alias_reverse_format = " from ".join(reversed(alias.split(" -> ")))
+                alias_dict[alias] = original_name
+                alias_dict[alias_reverse_format] = original_name
+
+            if "return" in entrance_data:
+                return_name = entrance_data["return"]["connection"]
+                if alias := entrance_data["return"].get("alias", None):
+                    alias_reverse_format = " from ".join(reversed(alias.split(" -> ")))
+                    alias_dict[alias] = return_name
+                    alias_dict[alias_reverse_format] = return_name
+
+    return alias_dict
