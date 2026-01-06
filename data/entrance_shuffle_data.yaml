@@ -556,7 +556,7 @@
   door_couple_tag: Knight Academy Upper
   forward:
     connection: Knight Academy Upper North Door Exterior -> Knight Academy Upper North Door Interior
-    alias: Knight Academy Upper North Door -> Upper Skyloft
+    alias: Upper Skyloft -> Knight Academy Upper North Door
     exit_infos:
       - stage: F000
         room: 0
@@ -568,7 +568,7 @@
         entrance: 4
   return:
     connection: Knight Academy Upper North Door Interior -> Knight Academy Upper North Door Exterior
-    alias: Upper Skyloft -> Knight Academy Upper North Door
+    alias: Knight Academy Upper North Door -> Upper Skyloft
     exit_infos:
       - stage: F001r
         room: 0
