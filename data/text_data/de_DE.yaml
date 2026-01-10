@@ -846,78 +846,77 @@
   cryptic: ein <r<großes Netz>>
   plurality: Singular
 
-# TODO: add translations
-# - name: Faron Grasshopper
-#   standard: Faron Grasshopper
-#   pretty: a <Faron Grasshopper>
-#   cryptic: a <r<jumping insect>>
-#   plurality: Singular
+- name: Faron Grasshopper
+  standard: Phiro-Hüpfer
+  pretty: ein <Phiro-Hüpfer>
+  cryptic: ein <r<springendes Insekt>>
+  plurality: Singular
 
-# - name: Woodland Rhino Beetle
-#   standard: Woodland Rhino Beetle
-#   pretty: a <Woodland Rhino Beetle>
-#   cryptic: a <r<horned forest insect>>
-#   plurality: Singular
+- name: Woodland Rhino Beetle
+  standard: Phiro-Riesenkäfer
+  pretty: ein <Phiro-Riesenkäfer>
+  cryptic: ein <r<gehörntes Insekt>>
+  plurality: Singular
 
-# - name: Deku Hornet
-#   standard: Deku Hornet
-#   pretty: a <Deku Hornet>
-#   cryptic: a <r<stinging insect>>
-#   plurality: Singular
+- name: Deku Hornet
+  standard: Deku-Biene
+  pretty: eine <Deku-Biene>
+  cryptic: ein <r<zustechendes Insekt>>
+  plurality: Singular
 
-# - name: Skyloft Mantis
-#   standard: Skyloft Mantis
-#   pretty: a <Skyloft Mantis>
-#   cryptic: a <r<posing sky insect>>
-#   plurality: Singular
+- name: Skyloft Mantis
+  standard: Himmelsanbeterin
+  pretty: eine <Himmelsanbeterin>
+  cryptic: ein <r<betendes Insekt>>
+  plurality: Singular
 
-# - name: Volcanic Ladybug
-#   standard: Volcanic Ladybug
-#   pretty: a <Volcanic Ladybug>
-#   cryptic: a <r<fiery posh insect>>
-#   plurality: Singular
+- name: Volcanic Ladybug
+  standard: Magmarienkäfer
+  pretty: ein <Magmarienkäfer>
+  cryptic: ein <r<auffallendes Insekt>>
+  plurality: Singular
 
-# - name: Blessed Butterfly
-#   standard: Blessed Butterfly
-#   pretty: a <Blessed Butterfly>
-#   cryptic: a <r<slippery insect>>
-#   plurality: Singular
+- name: Blessed Butterfly
+  standard: Himmelsfalter
+  pretty: einen <Himmelsfalter>
+  cryptic: ein <r<ausweichendes Insekt>> #slippery could alternative be translated with "gerissen"
+  plurality: Singular
 
-# - name: Lanayru Ant
-#   standard: Lanayru Ant
-#   pretty: a <Lanayru Ant>
-#   cryptic: a <r<sandy worker insect>>
-#   plurality: Singular
+- name: Lanayru Ant
+  standard: Ranelle-Ameise
+  pretty: eine <Ranelle-Ameise>
+  cryptic: ein <r<arbeitendes Insekt>>
+  plurality: Singular
 
-# - name: Sand Cicada
-#   standard: Sand Cicada
-#   pretty: a <Sand Cicada>
-#   cryptic: a <r<noisy insect>>
-#   plurality: Singular
+- name: Sand Cicada
+  standard: Sandzikade
+  pretty: eine <Sandzikade>
+  cryptic: ein <r<zirpendes Insekt>>
+  plurality: Singular
 
-# - name: Gerudo Dragonfly
-#   standard: Gerudo Dragonfly
-#   pretty: a <Gerudo Dragonfly>
-#   cryptic: a <r<fast insect>>
-#   plurality: Singular
+- name: Gerudo Dragonfly
+  standard: Gerudo-Libelle
+  pretty: eine <Gerudo-Libelle>
+  cryptic: ein <r<schnelles Insekt>>
+  plurality: Singular
 
-# - name: Eldin Roller
-#   standard: Eldin Roller
-#   pretty: a <Eldin Roller>
-#   cryptic: a <r<sisyphean insect>>
-#   plurality: Singular
+- name: Eldin Roller
+  standard: Eldin-Skarabäus
+  pretty: einen <Eldin-Skarabäus>
+  cryptic: ein <r<sisyphusmäßiges Insekt>>
+  plurality: Singular
 
-# - name: Sky Stag Beetle
-#   standard: Sky Stag Beetle
-#   pretty: a <Sky Stag Beetle>
-#   cryptic: a <r<bachelor's insect>>
-#   plurality: Singular
+- name: Sky Stag Beetle
+  standard: Wolken-Hirschkäfer
+  pretty: einen <Wolken-Hirschkäfer>
+  cryptic: eines <r<Jungen Insekt>>
+  plurality: Singular
 
-# - name: Starry Firefly
-#   standard: Starry Firefly
-#   pretty: a <Starry Firefly>
-#   cryptic: a <r<glowing insect>>
-#   plurality: Singular
+- name: Starry Firefly
+  standard: Wolken-Glühwürmchen
+  pretty: ein <Wolken-Glühwürmchen>
+  cryptic: ein <r<leuchtendes Insekt>>
+  plurality: Singular
 
 - name: Empty Bottle
   standard: leere Flasche
@@ -943,21 +942,20 @@
   cryptic: ein <r<Babyspielzeug>>
   plurality: Singular
 
-# TODO: add translations
-# - name: Hornet Larvae
-#   standard: Hornet Larvae
-#   pretty:
-#     text: some <Hornet Larvae>
-#     plurality: Plural
-#   cryptic:
-#     text: a <r<sticky home>>
-#     plurality: Singular
+- name: Hornet Larvae
+  standard: Bienenlarven
+  pretty:
+    text: ein paar <Bienenlarven>
+    plurality: Plural
+  cryptic:
+    text: ein <r<klebriges Haus>>
+    plurality: Singular
 
-# - name: Bird Feather
-#   standard: Bird Feather
-#   pretty: a <Bird Feather>
-#   cryptic: a <r<writing implement>>
-#   plurality: Singular
+- name: Bird Feather
+  standard: Vogelfeder
+  pretty: eine <Vogelfeder>
+  cryptic: ein <r<Schreibutensil>>
+  plurality: Singular
 
 - name: Tumbleweed
   standard: Wüstengras
@@ -965,12 +963,11 @@
   cryptic: ein <r<trockener Grasball>>
   plurality: Singular
 
-# TODO: add translations
-# - name: Lizard Tail
-#   standard: Lizard Tail
-#   pretty: a <Lizard Tail>
-#   cryptic: a <r<spiky tail>>
-#   plurality: Singular
+- name: Lizard Tail
+  standard: Eidechsenschwanz
+  pretty: einen <Eidechsenschwanz>
+  cryptic: ein <r<stacheliger Schwanz>>
+  plurality: Singular
 
 - name: Eldin Ore
   standard: Eldin-Erz
@@ -984,12 +981,12 @@
   cryptic: eine <r<uralte Pflanze>>
   plurality: Singular
 
-# TODO: add translations
-# - name: Amber Relic
-#   standard: Amber Relic
-#   pretty: an <Amber Relic>
-#   cryptic: an <r<orange tear>>
-#   plurality: Singular
+# TODO: Check Translation
+- name: Amber Relic
+  standard: Bernsteinhalbmond
+  pretty: einen <Bernsteinhalbmond>
+  cryptic: eine <r<orangene Träne>> #alternative "helle Träne" could work as well, would be the opposite of dark tear
+  plurality: Singular
 
 - name: Dusk Relic
   standard: Finsterhalbmond
@@ -997,18 +994,17 @@
   cryptic: eine <r<dunkle Träne>>
   plurality: Singular
 
-# TODO: add translations
-# - name: Jelly Blob
-#   standard: Jelly Blob
-#   pretty: a <Jelly Blob>
-#   cryptic: a <r<slimey orb>>
-#   plurality: Singular
+- name: Jelly Blob
+  standard: Glibber
+  pretty: ein <Glibber>
+  cryptic: ein <r<schleimiger Ball>>
+  plurality: Singular
 
-# - name: Monster Claw
-#   standard: Monster Claw
-#   pretty: a <Monster Claw>
-#   cryptic: a <r<hand of evil>>
-#   plurality: Singular
+- name: Monster Claw
+  standard: Monsterklaue
+  pretty: eine <Monsterklaue>
+  cryptic: eine <r<Hand des Bösen>>
+  plurality: Singular
 
 - name: Monster Horn
   standard: Monsterhorn
@@ -1016,12 +1012,11 @@
   cryptic: ein <r<Signal ans Böse>>
   plurality: Singular
 
-# TODO: add translations
-# - name: Ornamental Skull
-#   standard: Ornamental Skull
-#   pretty: a <Ornamental Skull>
-#   cryptic: a <r<weathered face>>
-#   plurality: Singular
+- name: Ornamental Skull
+  standard: Schmuckschädel
+  pretty: einen <Schmuckschädel>
+  cryptic: ein <r<verwittertes Gesicht>>
+  plurality: Singular
 
 - name: Evil Crystal
   standard: Schattenkristall
@@ -1323,14 +1318,14 @@
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
   plurality: Singular
 
-# TODO: update with new name
+# TODO: Update with new name
 - name: Deep Woods Goddess Cube in front of Temple
   standard: Artefakt der Göttin tief im Wald vor Himmelsblick
   pretty: das <Artefakt der Göttin tief im Wald vor Himmelsblick>
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
   plurality: Singular
 
-# TODO: update with new name
+# TODO: Update with new name
 - name: Deep Woods Goddess Cube on top of Temple
   standard: Artefakt der Göttin tief im Wald auf Himmelsblick
   pretty: das <Artefakt der Göttin tief im Wald auf Himmelsblick>
@@ -1379,7 +1374,7 @@
   cryptic: ein <ye<Artefakt mit heiliger Kraft>>
   plurality: Singular
 
-# TODO: update with new name
+# TODO: Update with new name
 - name: Mogma Turf Goddess Cube on Raised Pillar
   standard: Artefakt der Göttin im Mogma-Revier
   pretty: das <Artefakt der Göttin im Mogma-Revier>
@@ -1635,13 +1630,13 @@
   pretty: Oberer Wolkenhort - Ausdauerfrucht nahe Statue der Göttin
   cryptic: eine <r<Frucht nahe einer großen Statue>>
 
-# TODO: update with new name
+# TODO: Update with new name
 - name: Inside the Statue of the Goddess - Raise Sword Item 1
   standard: In der Statue der Göttin - Schwert der Göttin Item 1
   pretty: In der Statue der Göttin - Schwert der Göttin Item 1
   cryptic: die <r<erste Belohnung der Göttin>>
 
-# TODO: update with new name
+# TODO: Update with new name
 - name: Inside the Statue of the Goddess - Raise Sword Item 2
   standard: In der Statue der Göttin - Schwert der Göttin Item 2
   pretty: In der Statue der Göttin - Schwert der Göttin Item 2
@@ -1667,7 +1662,7 @@
   pretty: Übungshalle - Juwel auf Dachbalken
   cryptic: ein <r<Trainingsjuwel>>
 
-# TODO: update with new name
+# TODO: Update with new name
 - name: Bazaar - Luv the Potion Lady's Gift
   standard: Basar - Geschenk der Trankbrauerin
   pretty: Basar - Geschenk der Trankbrauerin
@@ -1768,7 +1763,7 @@
   pretty: Zentrum des Wolkenhorts - Sasias Dankbarkeit
   cryptic: eine <r<glückliche Mutter>>
 
-# TODO: update with new name
+# TODO: Update with new name
 - name: Central Skyloft - Kukiel's Family Closet
   standard: Zentrum des Wolkenhorts - Sasias Schrank
   pretty: Zentrum des Wolkenhorts - Sasias Schrank
@@ -2687,7 +2682,7 @@
 #   pretty: Sealed Grounds - Gossip Stone Treasure Behind the Temple
 #   cryptic: the <r<blessing>> of the <r<Imprisoned's guardian>>
 
-# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: update translation "Gossip Stone" -> "Gossip Stone Hint"
 - name: Sealed Grounds - Gossip Stone Hint Behind the Temple
   standard: Siegelhain - Mythenstein hinter Tempel
   pretty: Siegelhain - Mythenstein hinter Tempel
@@ -3475,7 +3470,7 @@
 #   pretty: Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator
 #   cryptic: the <r<blessing>> of the <r<burrowing guardian>>
 
-# TODO: update with new name + "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations with new name and "Gossip Stone" -> "Gossip Stone Hint"
 - name: Thrill Digger Cave - Gossip Stone Hint near Tubert the Thrill Digger Operator
   standard: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
   pretty: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
@@ -3572,7 +3567,7 @@
 #   pretty: Eldin Volcano - Gossip Stone Treasure on Cliff West of Temple
 #   cryptic: the <r<blessing>> of the <r<hot temple's guardian>>
 
-# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
 - name: Eldin Volcano - Gossip Stone Hint on Cliff West of Temple
   standard: Vulkan Eldin - Mythenstein auf Klippe westlich des Tempels
   pretty: Vulkan Eldin - Mythenstein auf Klippe westlich des Tempels
@@ -3584,7 +3579,7 @@
 #   pretty: Upper Eldin Cave - West Gossip Stone Treasure
 #   cryptic: the <r<blessing>> of the <r<warm upper cave's guardian>>
 
-# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
 - name: Upper Eldin Cave - West Gossip Stone Hint
   standard: Obere Eldinhöhle - Westlicher Mythenstein
   pretty: Obere Eldinhöhle - Westlicher Mythenstein
@@ -3596,7 +3591,7 @@
 #   pretty: Lower Eldin Cave - East Gossip Stone Treasure
 #   cryptic: the <r<blessing>> of the <r<warm lower cave's guardian>>
 
-# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
 - name: Lower Eldin Cave - East Gossip Stone Hint
   standard: Untere Eldinhöhle - Östlicher Mythenstein
   pretty: Untere Eldinhöhle - Östlicher Mythenstein
@@ -3974,7 +3969,7 @@
 #   pretty: Volcano Summit - Gossip Stone Treasure on Cliff near Waterfall
 #   cryptic: the <r<blessing>> of the <r<volcano's watery guardian>>
 
-# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
 - name: Volcano Summit - Gossip Stone Hint on Cliff near Waterfall
   standard: Vulkangipfel - Mythenstein auf Klippe nahe Wasserfall
   pretty: Vulkangipfel - Mythenstein auf Klippe nahe Wasserfall
@@ -3986,7 +3981,7 @@
 #   pretty: Volcano Summit - Gossip Stone Treasure between Small Thirsty Frogs
 #   cryptic: the <r<blessing>> of the <r<volcano's parched guardian>>
 
-# TODO: Update Translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
 - name: Volcano Summit - Gossip Stone Hint between Small Thirsty Frogs
   standard: Vulkangipfel - Mythenstein zwischen kleinen durstigen Fröschen
   pretty: Vulkangipfel - Mythenstein zwischen kleinen durstigen Fröschen
@@ -4258,7 +4253,6 @@
   pretty: Wüste Ranelle - Rubin hinter südlicher Statue nahe eingesperrtem Roboter 
   cryptic: einen <r<bewachten Rubin nahe einem gefangenen Roboter>>
 
-
 - name: Lanayru Desert - Rupee behind West Statue near Caged Robot
   standard: Wüste Ranelle - Rubin hinter westlicher Statue nahe eingesperrtem Roboter
   pretty: Wüste Ranelle - Rubin hinter westlicher Statue nahe eingesperrtem Roboter 
@@ -4375,7 +4369,7 @@
 #   pretty: Temple of Time - Gossip Stone Treasure near Robot
 #   cryptic: the <r<blessing>> of the <r<time-travelling guardian>>
 
-# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
 - name: Temple of Time - Gossip Stone Hint near Robot
   standard: Tempel der Zeit - Mythenstein nahe Roboter
   pretty: Tempel der Zeit - Mythenstein nahe Roboter
@@ -4451,13 +4445,13 @@
   pretty: Feuer-Knotenpunkt - Erhöhte Schatztruhe
   cryptic: eine <r<erhöhte Truhe im Feuer-Knotenpunkt>>
 
-# TODO: update with new name
+# TODO: Update with new name
 - name: Fire Node - First Chest below Sand
   standard: Feuer-Knotenpunkt - Erste Schatztruhe
   pretty: Feuer-Knotenpunkt - Erste Schatztruhe
   cryptic: eine <r<Truhe in der Mitte eines Lagers aus Stein>>
 
-# TODO: update with new name
+# TODO: Update with new name
 - name: Fire Node - Second Chest below Sand
   standard: Feuer-Knotenpunkt - Zweite Schatztruhe
   pretty: Feuer-Knotenpunkt - Zweite Schatztruhe
@@ -4524,7 +4518,7 @@
 #   pretty: Lanayru Caves - Gossip Stone Treasure in Center
 #   cryptic: the <r<blessing>> of the <r<sandy cave's guardian>>
 
-# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
 - name: Lanayru Caves - Gossip Stone Hint in Center
   standard: Ranelle-Höhle - Mythenstein im Zentrum
   pretty: Ranelle-Höhle - Mythenstein im Zentrum
@@ -4536,7 +4530,7 @@
 #   pretty: Lanayru Caves - Gossip Stone Treasure towards Lanayru Gorge
 #   cryptic: the <r<blessing>> of the <r<sandy cave's twin guardian>>
 
-# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
 - name: Lanayru Caves - Gossip Stone Hint towards Lanayru Gorge
   standard: Ranelle-Höhle - Mythenstein in Richtung Ranelle-Schlucht
   pretty: Ranelle-Höhle - Mythenstein in Richtung Ranelle-Schlucht
@@ -4806,7 +4800,7 @@
 #   pretty: Shipyard - Gossip Stone Treasure after First Minecart Track
 #   cryptic: the <r<blessing>> of the <r<roller coaster's guardian>>
 
-# TODO: Update translation "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
 - name: Shipyard - Gossip Stone Hint after First Minecart Track
   standard: Werft - Mythenstein nach erstem Minenwagenparkour
   pretty: Werft - Mythenstein nach erstem Minenwagenparkour
