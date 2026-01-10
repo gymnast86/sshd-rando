@@ -8,6 +8,7 @@ import math
 
 def generate_hints(worlds: list[World]) -> None:
     print_progress_text("Generating Hints")
+    set_plandomizer_custom_messages(worlds)
     sanitize_major_items(worlds)
     calculate_possible_path_locations(worlds)
     calculate_possible_barren_regions(worlds)
@@ -71,6 +72,14 @@ def generate_hints(worlds: list[World]) -> None:
 
         if hints_for_category["fi_hints"]:
             world.fi_hints = hints_for_category["fi_hints"]
+
+
+def set_plandomizer_custom_messages(worlds: list[World]) -> None:
+    for world in worlds:
+        for hint_location, message in world.plandomizer.custom_messages.items():
+            hint_location.hint.text = Text(message)
+            hint_location.hint.type = "Custom"
+            world.gossip_stone_hints[hint_location] = [hint_location]
 
 
 # Set some items as non-major depending on certain conditions.
@@ -717,6 +726,14 @@ def assign_gossip_stone_hints(
     random.shuffle(hint_locations)
 
     gossip_stone_locations = world.get_gossip_stones()
+
+    # Filter out gossip stones that have custom messages that have already been set
+    custom_message_stones = [
+        stone for stone, hints in world.gossip_stone_hints.items() if stone == hints[0]
+    ]
+    for stone in custom_message_stones:
+        gossip_stone_locations.remove(stone)
+
     hints_per_stone = math.ceil(len(hint_locations) / len(gossip_stone_locations))
 
     # Keep trying to place hints until all have been logically placed
@@ -774,7 +791,7 @@ def assign_gossip_stone_hints(
     available_gossip_stones = [
         stone
         for stone, hints in world.gossip_stone_hints.items()
-        if len(hints) < hints_per_stone
+        if len(hints) < hints_per_stone and stone not in custom_message_stones
     ]
     random.shuffle(available_gossip_stones)
     while available_gossip_stones:
