@@ -1299,7 +1299,7 @@ class Tracker:
         info_inner_top_layout = QHBoxLayout()
         info_inner_bottom_layout = QHBoxLayout()
 
-        lead_to_label = QLabel(f"Where did {entrance.original_name} lead to?")
+        lead_to_label = QLabel(f"Where did {entrance.alias} lead to?")
         lead_to_label.setMargin(10)
         lead_to_label.setWordWrap(True)
         back_button = TrackerShowEntrancesButton(parent_area_name, "Back")
@@ -1342,7 +1342,8 @@ class Tracker:
                     [
                         t
                         for t in targets
-                        if t != target and target.connected_area == t.connected_area
+                        if t != target
+                        and target.alias_connected_area() == t.alias_connected_area()
                     ]
                 )
                 target_label = TrackerTargetLabel(
