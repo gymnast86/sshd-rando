@@ -11,6 +11,7 @@ from .requirements import *
 from .item_pool import *
 from .dungeon import *
 from .search import game_beatable, Search, SearchMode
+from .plandomizer import Plandomizer, PlandomizerError
 from util.text import *
 
 from collections import Counter, OrderedDict
@@ -67,8 +68,7 @@ class World:
         self.playthrough_spheres: list[list[Location]] = None  # type: ignore
         self.entrance_spheres: list[list[Entrance]] = None  # type: ignore
 
-        self.plandomizer_locations: dict[Location, Item] = {}
-        self.plandomizer_entrances: dict[Entrance, Entrance] = {}
+        self.plandomizer: Plandomizer = Plandomizer()
 
         # Hint related things
         # goal_locations are locations at the end of required dungeons and Defeat Demise
@@ -332,7 +332,7 @@ class World:
         defeat_demise.has_known_vanilla_item = True
 
     def place_plandomizer_items(self) -> None:
-        for location, item in self.plandomizer_locations.items():
+        for location, item in self.plandomizer.locations.items():
             location.set_current_item(item)
             world = item.world
             # If this is a bottled item, subtract an empty bottle from the pool
@@ -708,7 +708,7 @@ class World:
                 item = location.current_item
                 if (
                     item == self.get_item(EMPTY_BOTTLE)
-                    and location not in world.plandomizer_locations
+                    and location not in world.plandomizer.locations
                 ):
                     location.remove_current_item()
                     location.set_current_item(self.get_item(bottle_pool.pop()))
@@ -749,6 +749,16 @@ class World:
                         item_price = random.randrange(
                             lower_price_bound, upper_price_bound
                         )
+
+                        # Override price with plando price if applicable
+                        if location in world.plandomizer.shop_prices:
+                            plando_price = world.plandomizer.shop_prices[location]
+                            if plando_price > upper_price_bound:
+                                raise PlandomizerError(
+                                    f"Shop price {plando_price} is too high for {location}. Maximum price is {upper_price_bound}"
+                                )
+                            item_price = plando_price
+
                         world.shop_prices[location.name] = item_price
 
     # Replaces a portion of the non-major item pool with traps.

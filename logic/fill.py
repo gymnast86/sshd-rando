@@ -383,6 +383,9 @@ def place_own_region_items(world: World, worlds: list[World]):
             ):
                 eldin_locations.append(location)
 
+        # Filter down to only progression locations
+        eldin_locations = [loc for loc in eldin_locations if loc.progression]
+
         for l in eldin_locations:
             print(l)
 

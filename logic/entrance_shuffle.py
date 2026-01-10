@@ -499,12 +499,12 @@ def set_plandomizer_entrances(
             for type, pool in entrance_pools.items()
             if type in Entrance.NON_ASSUMED_ENTRANCE_TYPES
             for entrance in pool
-            if entrance not in world.plandomizer_entrances
+            if entrance not in world.plandomizer.entrances
         ]
     )
 
     # Attempt to connect each plandomized entrance
-    for entrance, target in world.plandomizer_entrances.items():
+    for entrance, target in world.plandomizer.entrances.items():
         entrance_to_connect = entrance
         target_to_connect = target
         entrance_type = entrance.type
