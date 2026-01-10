@@ -3470,7 +3470,7 @@
 #   pretty: Thrill Digger Cave - Gossip Stone Treasure near Tubert the Thrill Digger Operator
 #   cryptic: the <r<blessing>> of the <r<burrowing guardian>>
 
-# TODO: Update translations "Gossip Stone" -> "Gossip Stone Hint"
+# TODO: Update translations with new name and "Gossip Stone" -> "Gossip Stone Hint"
 - name: Thrill Digger Cave - Gossip Stone Hint near Tubert the Thrill Digger Operator
   standard: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
   pretty: Risiko-Rubinjagd-Höhle - Mythenstein nahe Cippolino
