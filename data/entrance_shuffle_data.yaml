@@ -140,9 +140,6 @@
       - stage: D300_1
         room: 5
         index: 4
-      - stage: B300
-        room: 0
-        index: 1
       - stage: F300_5
         room: 0
         index: 3
