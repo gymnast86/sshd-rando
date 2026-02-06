@@ -1,6 +1,5 @@
 from constants.itemnames import *
 
-
 # Item Groups
 ALL_TABLETS = (EMERALD_TABLET, RUBY_TABLET, AMBER_TABLET)
 

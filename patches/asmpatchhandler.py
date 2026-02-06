@@ -40,7 +40,6 @@ from sslib.fs_helpers import write_bytes, write_str, write_u32, write_u8
 from sslib.utils import write_bytes_create_dirs
 from sslib.yaml import yaml_load, yaml_write
 
-
 # Adds a patch to nnSdk to route all vfprintf calls to the debug output
 # These will be printed to the console on yuzu
 # Only prints that start with "> " will be printed to the console on yuzu
